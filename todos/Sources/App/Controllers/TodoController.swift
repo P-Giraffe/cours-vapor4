@@ -3,12 +3,18 @@ import Vapor
 
 struct TodoController {
     func index(req: Request) throws -> EventLoopFuture<[Todo]> {
-        return Todo.query(on: req.db).all()
+        return Todo.query(on: req.db)
+            .sort(\.$title, .ascending)
+            .all()
+    }
+    
+    func count(req: Request) throws -> EventLoopFuture<Int> {
+        return Todo.query(on: req.db).all().map { todoList -> Int in todoList.count }
     }
 
     func create(req: Request) throws -> EventLoopFuture<Todo> {
-        let todo = try req.content.decode(Todo.self)
-        return todo.save(on: req.db).map { todo }
+        let todo:Todo = try req.content.decode(Todo.self)
+        return todo.save(on: req.db).transform(to: todo)
     }
 
     func delete(req: Request) throws -> EventLoopFuture<HTTPStatus> {
