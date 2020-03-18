@@ -17,6 +17,9 @@ struct UserController {
         return user.save(on: req.db).transform(to: user)
     }
     
+    func login(req: Request) throws -> EventLoopFuture<UserToken> {
+        let user = try req.auth.require(User.self)
+    }
 }
 
 extension User {
@@ -24,6 +27,15 @@ extension User {
         var name: String
         var email: String
         var password: String
+    }
+}
+
+extension User : ModelUser {
+    static var usernameKey = \User.$email
+    static var passwordHashKey = \User.$passwordHash
+    
+    func verify(password: String) throws -> Bool {
+        return try Bcrypt.verify(password, created: self.passwordHash)
     }
 }
 
