@@ -19,6 +19,8 @@ struct UserController {
     
     func login(req: Request) throws -> EventLoopFuture<UserToken> {
         let user = try req.auth.require(User.self)
+        let token = try user.generateToken()
+        return token.save(on: req.db).transform(to: token)
     }
 }
 
@@ -36,6 +38,11 @@ extension User : ModelUser {
     
     func verify(password: String) throws -> Bool {
         return try Bcrypt.verify(password, created: self.passwordHash)
+    }
+    
+    func generateToken() throws -> UserToken {
+        return try UserToken(value: [UInt8].random(count: 16).base64,
+                         userID: self.requireID())
     }
 }
 
