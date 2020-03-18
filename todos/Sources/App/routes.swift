@@ -6,11 +6,13 @@ func routes(_ app: Application) throws {
     
     let basicGroup = app.grouped(User.authenticator().middleware())
     basicGroup.post("login", use: userController.login)
+    
+    let tokenGroup = app.grouped(UserToken.authenticator().middleware())
 
     let todoController = TodoController()
     app.get("todos", use: todoController.index)
-    app.post("todos", use: todoController.create)
-    app.delete("todos", ":todoID", use: todoController.delete)
+    tokenGroup.post("todos", use: todoController.create)
+    tokenGroup.delete("todos", ":todoID", use: todoController.delete)
     
     
     app.post("users", use: userController.create)

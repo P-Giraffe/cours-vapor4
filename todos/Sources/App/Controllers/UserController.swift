@@ -46,3 +46,12 @@ extension User : ModelUser {
     }
 }
 
+extension UserToken : ModelUserToken {
+    static let valueKey = \UserToken.$value
+    static let userKey = \UserToken.$user
+
+    var isValid: Bool {
+        return true
+    }
+}
+
