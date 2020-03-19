@@ -24,6 +24,9 @@ final class User: Model, Content {
 
     @Field(key: "password_hash")
     var passwordHash: String
+    
+    @Children(for: \UserToken.$user)
+    var tokens:[UserToken]
 
     init() { }
 
