@@ -1,0 +1,4 @@
+Host pg-api-swift
+	HostName 51.15.198.180
+	User root
+	IdentityFile ~/.ssh/id_rsa_scaleway_purplegiraffe
