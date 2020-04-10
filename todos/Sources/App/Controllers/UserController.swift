@@ -10,6 +10,7 @@ import Vapor
 
 struct UserController {
     func create(req: Request) throws -> EventLoopFuture<User> {
+        try User.Create.validate(req)
         let receivedData = try req.content.decode(User.Create.self)
         let user = try User(name: receivedData.name,
                             email: receivedData.email,
@@ -25,7 +26,12 @@ struct UserController {
 }
 
 extension User {
-    struct Create : Content {
+    struct Create : Content, Validatable {
+        static func validations(_ validations: inout Validations) {
+            validations.add("email", as: String.self, is: .email)
+            validations.add("password", as: String.self, is: .count(8...))
+        }
+        
         var name: String
         var email: String
         var password: String
