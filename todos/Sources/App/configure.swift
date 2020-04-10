@@ -11,7 +11,7 @@ public func configure(_ app: Application) throws {
     if app.environment == .production {
         let password = Environment.get("MYSQL_PASSWORD")!
         //export MYSQL_PASSWORD=3YroPhon=h9PzWM}dcwf
-        app.databases.use(.mysql(hostname: "127.0.0.1", username: "vapor_user", password: password))
+        app.databases.use(.mysql(hostname: "127.0.0.1", username: "vapor_user", password: password), as: .mysql)
     } else {
         app.databases.use(.sqlite(.file("db.sqlite")), as: .sqlite)
     }
