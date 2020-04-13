@@ -9,9 +9,8 @@ public func configure(_ app: Application) throws {
     // app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
     if app.environment == .production {
-        let password = Environment.get("MYSQL_PASSWORD")!
-        //export MYSQL_PASSWORD=3YroPhon=h9PzWM}dcwf
-        app.databases.use(.mysql(hostname: "127.0.0.1", username: "vapor_user", password: password), as: .mysql)
+        //Environment.get("MySQL_VAPOR_PASSWORD")
+        app.databases.use(.mysql(hostname: "127.0.0.1", username: "vapor_user", password: "", tlsConfiguration: TLSConfiguration.forClient(certificateVerification: .none)), as: .mysql)
     } else {
         app.databases.use(.sqlite(.file("db.sqlite")), as: .sqlite)
     }
