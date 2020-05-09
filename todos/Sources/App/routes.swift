@@ -5,9 +5,12 @@ func routes(_ app: Application) throws {
     let userController = UserController()
     
     let basicGroup = app.grouped(User.authenticator())
+        .grouped(User.guardMiddleware())
+    
     basicGroup.post("login", use: userController.login)
     
     let tokenGroup = app.grouped(UserToken.authenticator())
+        .grouped(UserToken.guardMiddleware())
 
     let todoController = TodoController()
     app.get("todos", use: todoController.index)
