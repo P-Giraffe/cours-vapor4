@@ -38,7 +38,7 @@ extension User {
     }
 }
 
-extension User : ModelUser {
+extension User : ModelAuthenticatable {
     static var usernameKey = \User.$email
     static var passwordHashKey = \User.$passwordHash
     
@@ -52,7 +52,7 @@ extension User : ModelUser {
     }
 }
 
-extension UserToken : ModelUserToken {
+extension UserToken : ModelTokenAuthenticatable {
     static let valueKey = \UserToken.$value
     static let userKey = \UserToken.$user
 
