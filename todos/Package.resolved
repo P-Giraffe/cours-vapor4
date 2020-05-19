@@ -60,8 +60,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-sqlite-driver.git",
         "state": {
           "branch": null,
-          "revision": "df46fa5cb2d3e42cd02f55fe8136b4c3269ad6d1",
-          "version": "4.0.0-rc.1.1"
+          "revision": "549d5a5e460a1a0cf087587a61f0e5eb8b93e2b3",
+          "version": "4.0.0-rc.1.2"
         }
       },
       {
