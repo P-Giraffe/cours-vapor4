@@ -1,90 +1,59 @@
 @testable import App
 import XCTVapor
-//import Fluent
 
 final class AppTests: XCTestCase {
     let app = Application(.testing)
-    let user = UserInformations()
+    let user = UserInfo()
     let routes = Routes()
     
-    struct UserInformations {
-        let name = "Poppy Lee"
-        let email = "poppy@mythicquest.com"
-        let password = "password"
-    }
-    
-    struct Routes {
-        let users = "users"
-        let login = "login"
-        let todos = "todos"
-    }
-    
-    enum Action {
-        case login, create, delete
-    }
-    
-    func loginAndTodoTesting(action:Action) throws {
-        defer { app.shutdown() }
-        try configure(app)
-        
+    func getBasicToken() -> HTTPHeaders {
         let basicCredentials = BasicAuthorization.init(username: user.email, password: user.password)
         var basicToken = HTTPHeaders()
         basicToken.basicAuthorization = basicCredentials
         
-        if action == .login || action == .create || action == .delete {
-            print("USER LOGIN")
-            
-            try app.test(.POST, routes.login, headers: basicToken, afterResponse: { res in
-                
-                let userLoginResponse = try res.content.decode(UserToken.self)
-                
-                XCTAssertNotNil(userLoginResponse.value)
-                XCTAssertEqual(res.status, HTTPStatus.ok)
-                
-                let bearerCredentials = BearerAuthorization.init(token: userLoginResponse.value)
-                var bearerToken = HTTPHeaders()
-                bearerToken.bearerAuthorization = bearerCredentials
-                
-                    
-                if action == .create {
-                    print("CREATE TODO")
-                    
-                    try app.test(.POST, routes.todos, headers: bearerToken, beforeRequest: { req in
-                        
-                        let todoTitle = "Test Todo"
-                        try req.content.encode(["title": todoTitle])
-                        
-                    }, afterResponse: { res in
-                        
-                        let createTodoResponse = try res.content.decode(Todo.self)
-                        XCTAssertNotNil(createTodoResponse.title)
-                    })
-                }
-                
-                if action == .delete {
-                    print("DELETE TODO")
-                    
-                    try app.test(.GET, routes.todos, afterResponse: { res in
-                        
-                        let getTodosResponse = try res.content.decode([Todo].self)
-                        XCTAssertEqual(res.status, HTTPStatus.ok)
-                        
-                        let getFirstTodo:Todo? = getTodosResponse.first
-                        if let firstTodo = getFirstTodo {
-                            if let todoID = firstTodo.id {
-                                let todoIDString = String(todoID)
-                                let routeWithTodoID = routes.todos + "/" + todoIDString
-                                
-                                try app.test(.DELETE, routeWithTodoID, headers: bearerToken, afterResponse: { res in
-                                    
-                                    XCTAssertEqual(res.status, HTTPStatus.ok)
-                                })
-                            }
-                        }
-                    })
-                }
-            })
+        return basicToken
+    }
+    
+    func getBearerToken() throws -> HTTPHeaders {
+        let bearerCredentials = try BearerAuthorization.init(token: getApiToken(app))
+        var bearerToken = HTTPHeaders()
+        bearerToken.bearerAuthorization = bearerCredentials
+        
+        return bearerToken
+    }
+
+    func getApiToken(_ app: Application) throws -> String {
+        
+        var token: String?
+    
+        try app.test(.POST, routes.login, headers: getBasicToken(), afterResponse: { res in
+            XCTAssertContent(UserToken.self, res) { content in
+                XCTAssertNotNil(content.value)
+                token = content.value
+            }
+            XCTAssertEqual(res.status, HTTPStatus.ok)
+        })
+        
+        guard let t = token else {
+            XCTFail("Login failed")
+            throw Abort(HTTPResponseStatus.unauthorized)
         }
+        
+        return t
+    }
+    
+    func getTodo(_ app: Application) throws -> [Todo] {
+        
+        var todos: [Todo] = []
+        
+        try app.test(.GET, routes.todos, afterResponse: { res in
+            XCTAssertContent([Todo].self, res) { content in
+                todos = content
+            }
+            XCTAssertEqual(res.status, HTTPStatus.ok)
+        })
+        
+        return todos
     }
     
     func testCreateUser() throws {
@@ -99,36 +68,75 @@ final class AppTests: XCTestCase {
             
             let newUserResponse = try res.content.decode(User.self)
             let passwordVerify = try newUserResponse.verify(password: user.password)
-            
+
             XCTAssertEqual(newUserResponse.name, user.name)
             XCTAssertEqual(newUserResponse.email, user.email)
-            XCTAssertEqual(passwordVerify, true)
+            XCTAssertTrue(passwordVerify)
             XCTAssertEqual(res.status, HTTPStatus.ok)
         })
     }
     
     func testLoginUser() throws {
-        try loginAndTodoTesting(action: .login)
+        defer { app.shutdown() }
+        try configure(app)
+        
+        try app.test(.POST, routes.login, headers: getBasicToken(), afterResponse: { res in
+            XCTAssertContent(UserToken.self, res) { content in
+                XCTAssertNotNil(content.value)
+            }
+            XCTAssertEqual(res.status, HTTPStatus.ok)
+        })
     }
     
     func testGetTodo() throws {
         defer { app.shutdown() }
         try configure(app)
         
-        try app.test(.GET, routes.todos, afterResponse: { res in
+        let todos = try getTodo(app)
+        
+        for todo in todos {
+            print("\(todo)\n")
+        }
+    }
+    
+    func testCreateTodo() throws {
+        defer { app.shutdown() }
+        try configure(app)
+        
+        try app.test(.POST, routes.todos, headers: getBearerToken(), beforeRequest: { req in
             
-            let getTodosResponse = try res.content.decode([Todo].self)
-            print(getTodosResponse)
+            let todoTitle = "Test Todo"
+            try req.content.encode(["title": todoTitle])
+            
+        }, afterResponse: { res in
+            XCTAssertContent(Todo.self, res) { content in
+                XCTAssertNotNil(content.title)
+            }
             XCTAssertEqual(res.status, HTTPStatus.ok)
         })
     }
     
-    func testCreateTodo() throws {
-        try loginAndTodoTesting(action: .create)
-    }
-    
     func testDeleteTodo() throws {
-        try loginAndTodoTesting(action: .delete)
+        defer { app.shutdown() }
+        try configure(app)
+        
+        let todos = try getTodo(app)
+        
+        let getFirstTodo: Todo? = todos.first
+        
+        if let firstTodo = getFirstTodo {
+            if let todoID = firstTodo.id {
+                
+                let todoIDString = String(todoID)
+                let routeWithTodoID = routes.todos + "/" + todoIDString
+                
+                try app.test(.DELETE, routeWithTodoID, headers: getBearerToken(), afterResponse: { res in
+                    
+                    XCTAssertEqual(res.status, HTTPStatus.ok)
+                    
+                })
+            }
+        }
     }
     
 }
