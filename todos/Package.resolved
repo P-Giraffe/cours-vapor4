@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/vapor/fluent.git",
         "state": {
           "branch": null,
-          "revision": "dba22d5a6115092482669efe5492d800ace4da38",
-          "version": "4.0.0-rc.2.2"
+          "revision": "f97d9ed3c8172585421112f1eb37b1b0e2246f51",
+          "version": "4.0.0-rc.3"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-kit.git",
         "state": {
           "branch": null,
-          "revision": "27288c2399f2d7d198f321ef184ce59f3fd5d250",
-          "version": "1.0.0-rc.1.27"
+          "revision": "9e2f7825c4512846380a22cfdcaf66a3b70205cd",
+          "version": "1.0.0-rc.2"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-mysql-driver.git",
         "state": {
           "branch": null,
-          "revision": "74d95e80b998e3d143a0361cd0ecd8b43f2d9fd1",
-          "version": "4.0.0-rc.1.3"
+          "revision": "60ce51c2df93a2fe631265d358c378b283b2a8f4",
+          "version": "4.0.0-rc.2"
         }
       },
       {
@@ -60,8 +60,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-sqlite-driver.git",
         "state": {
           "branch": null,
-          "revision": "549d5a5e460a1a0cf087587a61f0e5eb8b93e2b3",
-          "version": "4.0.0-rc.1.2"
+          "revision": "a9f4313e78f68b41c91d8057ee8269c9beb1e4d5",
+          "version": "4.0.0-rc.2"
         }
       },
       {
@@ -105,8 +105,8 @@
         "repositoryURL": "https://github.com/vapor/sqlite-kit.git",
         "state": {
           "branch": null,
-          "revision": "7251abf07442da3e5dc6e13e1564670bf82e10d3",
-          "version": "4.0.0-rc.1"
+          "revision": "9259e3948dbc4f8e6a1e761423483e10931c03c9",
+          "version": "4.0.0-rc.1.1"
         }
       },
       {
@@ -195,8 +195,8 @@
         "repositoryURL": "https://github.com/vapor/vapor.git",
         "state": {
           "branch": null,
-          "revision": "a049aff03acf7801fd91fe7e71761437055a805f",
-          "version": "4.6.0"
+          "revision": "6dfdb3445308c40280bf1c071fe14c1c92f98a0d",
+          "version": "4.7.1"
         }
       },
       {
