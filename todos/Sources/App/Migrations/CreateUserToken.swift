@@ -1,11 +1,12 @@
 //
-//  File.swift
+//  CreateUserToken.swift
 //  
 //
 //  Created by Maxime Britto on 18/03/2020.
 //
 
 import Fluent
+
 struct CreateUserToken: Migration {
     func prepare(on database: Database) -> EventLoopFuture<Void> {
         database.schema("user_tokens")
