@@ -60,24 +60,16 @@ class TestTodoController {
     func deleteTodo(_ app: Application) throws {
         // Obtention des Todos.
         let todos: [Todo] = try getTodo(app)
-        // Obtention du premier Todo.
-        let getFirstTodo: Todo? = todos.first
+        // Obtention du premier Todo et Test de déballage de l'optionnel.
+        let firstTodo: UUID =  try XCTUnwrap(todos.first?.id)
+        // Création de la Route avec l'ID du Todo.
+        let routeWithTodoID: String = routes.todos + "/" + String(firstTodo)
         
-        // Vérification des l'optionnels
-        if let firstTodo = getFirstTodo {
-            if let todoID = firstTodo.id {
-                // Conversion de l'ID en String.
-                let todoIDString: String = String(todoID)
-                // Création de la Route avec l'ID du Todo.
-                let routeWithTodoID: String = routes.todos + "/" + todoIDString
-                
-                try app.test(.DELETE, routeWithTodoID, headers: user.getBearerToken(app), afterResponse: { res in
-                    // Test: Vérification du status HTTP: OK (Code 200)
-                    XCTAssertEqual(res.status, HTTPStatus.ok)
-                    print("DELETE TODO OK")
-                })
-            }
-        }
+        try app.test(.DELETE, routeWithTodoID, headers: user.getBearerToken(app), afterResponse: { res in
+            // Test: Vérification du status HTTP: OK (Code 200)
+            XCTAssertEqual(res.status, HTTPStatus.ok)
+            print("DELETE TODO OK")
+        })
     }
     
 }
