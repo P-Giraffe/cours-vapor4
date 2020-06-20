@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  CreateUser.swift
 //  
 //
 //  Created by Maxime Britto on 18/03/2020.
@@ -9,7 +9,6 @@ import Fluent
 import Vapor
 
 struct CreateUser: Migration {
-
     func prepare(on database: Database) -> EventLoopFuture<Void> {
         database.schema("users")
             .id()

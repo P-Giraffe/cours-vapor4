@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  UserToken.swift
 //  
 //
 //  Created by Maxime Britto on 18/03/2020.
