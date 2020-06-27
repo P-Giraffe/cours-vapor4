@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/vapor/console-kit.git",
         "state": {
           "branch": null,
-          "revision": "4ffc23dd1d6454228f78194ef68d8b20fca9390a",
-          "version": "4.1.1"
+          "revision": "05c52a91631a6ca432275439f6456a5dace0d1db",
+          "version": "4.1.2"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-kit.git",
         "state": {
           "branch": null,
-          "revision": "8ac0bc2764d3c93e5a30e7799492ea518afd9cc0",
-          "version": "1.0.1"
+          "revision": "ad5eef38c5168fdb4b77d5a73794a90e0ce3b9a5",
+          "version": "1.0.2"
         }
       },
       {
@@ -96,8 +96,8 @@
         "repositoryURL": "https://github.com/vapor/sql-kit.git",
         "state": {
           "branch": null,
-          "revision": "ced1bbf79d8df7bd106e3d898b28cbc77bd69100",
-          "version": "3.3.0"
+          "revision": "8b82edd5d918068f204e3ac4206d5d15f6740395",
+          "version": "3.5.0"
         }
       },
       {
@@ -195,8 +195,8 @@
         "repositoryURL": "https://github.com/vapor/vapor.git",
         "state": {
           "branch": null,
-          "revision": "2bfe7149d9786e2e601898cb10b9ba9072f60c0b",
-          "version": "4.10.0"
+          "revision": "dc2aa1e02e04a47b67cb0dabed628fe844900f30",
+          "version": "4.14.0"
         }
       },
       {
