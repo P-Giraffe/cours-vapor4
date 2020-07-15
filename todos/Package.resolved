@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/vapor/console-kit.git",
         "state": {
           "branch": null,
-          "revision": "9b5842b47be1a3164a42811613dce09bf5bf1f91",
-          "version": "4.1.3"
+          "revision": "310f714b4ac4032946fd2c7984e8082a99f7dd49",
+          "version": "4.2.0"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-kit.git",
         "state": {
           "branch": null,
-          "revision": "545a1b7c13c5500de436ba640198e22b7d3b0671",
-          "version": "1.1.0"
+          "revision": "7f704e7a0432c68318edea1b784738649c881267",
+          "version": "1.4.0"
         }
       },
       {
@@ -60,8 +60,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-sqlite-driver.git",
         "state": {
           "branch": null,
-          "revision": "a9f4313e78f68b41c91d8057ee8269c9beb1e4d5",
-          "version": "4.0.0-rc.2"
+          "revision": "58930f249cd5eb066d781289c5545db699bb4334",
+          "version": "4.0.0-rc.2.1"
         }
       },
       {
@@ -78,8 +78,8 @@
         "repositoryURL": "https://github.com/vapor/mysql-nio.git",
         "state": {
           "branch": null,
-          "revision": "6ac341adbf2cfa5c903e785c03b90a08153d1362",
-          "version": "1.0.0-rc.2.4"
+          "revision": "11b69fe90fb282c4a385b3b7ddb3011033672e48",
+          "version": "1.0.0-rc.2.5"
         }
       },
       {
@@ -96,8 +96,8 @@
         "repositoryURL": "https://github.com/vapor/sql-kit.git",
         "state": {
           "branch": null,
-          "revision": "49d4aa0386a93450cf70375fc89844fde5f3eaa9",
-          "version": "3.6.0"
+          "revision": "ea9928b7f4a801b175a00b982034d9c54ecb6167",
+          "version": "3.7.0"
         }
       },
       {
@@ -195,8 +195,8 @@
         "repositoryURL": "https://github.com/vapor/vapor.git",
         "state": {
           "branch": null,
-          "revision": "7f6aa007947cbf9bef9e6deeeaceeebb7c2506c3",
-          "version": "4.15.1"
+          "revision": "75c7236859834c4f23d373905768976cf6550600",
+          "version": "4.20.1"
         }
       },
       {
@@ -204,8 +204,8 @@
         "repositoryURL": "https://github.com/vapor/websocket-kit.git",
         "state": {
           "branch": null,
-          "revision": "021edd1ca55451ad15b3e84da6b4064e4b877b34",
-          "version": "2.1.0"
+          "revision": "b0736014be634475dac4c23843811257d86dcdc1",
+          "version": "2.1.1"
         }
       }
     ]
