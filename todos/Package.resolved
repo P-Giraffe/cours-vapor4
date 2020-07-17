@@ -60,8 +60,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-sqlite-driver.git",
         "state": {
           "branch": null,
-          "revision": "58930f249cd5eb066d781289c5545db699bb4334",
-          "version": "4.0.0-rc.2.1"
+          "revision": "b828ac3891f6c872a2cc4b76586d68327af2941e",
+          "version": "4.0.0"
         }
       },
       {
@@ -105,8 +105,8 @@
         "repositoryURL": "https://github.com/vapor/sqlite-kit.git",
         "state": {
           "branch": null,
-          "revision": "472531cf508271de1dded82928bc6aaa9996db61",
-          "version": "4.0.0"
+          "revision": "73d4156dd1e000a8814ac7c74732fcad52a91bda",
+          "version": "4.0.1"
         }
       },
       {
@@ -195,8 +195,8 @@
         "repositoryURL": "https://github.com/vapor/vapor.git",
         "state": {
           "branch": null,
-          "revision": "562aca72d2d7142781e812d80af06af90f5d5b33",
-          "version": "4.24.0"
+          "revision": "4778e2ab335d4055ee308b0aa71fab32db0624a4",
+          "version": "4.25.0"
         }
       },
       {
