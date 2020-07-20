@@ -10,7 +10,7 @@ import Vapor
 
 struct UserController {
     func create(req: Request) throws -> EventLoopFuture<User> {
-        try User.Create.validate(req)
+        try User.Create.validate(content: req)
         let receivedData = try req.content.decode(User.Create.self)
         let user = try User(name: receivedData.name,
                             email: receivedData.email,
