@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/vapor/console-kit.git",
         "state": {
           "branch": null,
-          "revision": "310f714b4ac4032946fd2c7984e8082a99f7dd49",
-          "version": "4.2.0"
+          "revision": "7cf8185ad62d50ae9777ce78bcfde8f5c9f900e2",
+          "version": "4.2.1"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-kit.git",
         "state": {
           "branch": null,
-          "revision": "a26c562b76ab1df4240cf1d6fa71fbafe8cd5465",
-          "version": "1.5.0"
+          "revision": "62767117c269a50f35934d7af674da79aa154846",
+          "version": "1.5.2"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-mysql-driver.git",
         "state": {
           "branch": null,
-          "revision": "60ce51c2df93a2fe631265d358c378b283b2a8f4",
-          "version": "4.0.0-rc.2"
+          "revision": "3a4b45b07ada5e45076fb028b75e4b389b1551c5",
+          "version": "4.0.0-rc.2.1"
         }
       },
       {
@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/vapor/mysql-kit.git",
         "state": {
           "branch": null,
-          "revision": "b59a08d77c3830b21f35fe744813640ef56a2ebb",
-          "version": "4.0.0-rc.1.6"
+          "revision": "c4d32e3fde8f30f3150b31885f4656285ada35fb",
+          "version": "4.0.0-rc.1.7"
         }
       },
       {
@@ -78,8 +78,8 @@
         "repositoryURL": "https://github.com/vapor/mysql-nio.git",
         "state": {
           "branch": null,
-          "revision": "a3d241fa552d70633b806d9eae60503d910cd473",
-          "version": "1.0.0-rc.2.6"
+          "revision": "687a9bab6b2fd6a68ff7977b735110d2ce0e5c58",
+          "version": "1.0.0"
         }
       },
       {
