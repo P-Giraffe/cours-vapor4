@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-mysql-driver.git",
         "state": {
           "branch": null,
-          "revision": "3a4b45b07ada5e45076fb028b75e4b389b1551c5",
-          "version": "4.0.0-rc.2.1"
+          "revision": "290ff5595be5e9b4054ae0adea53e9f9c0f961a8",
+          "version": "4.0.0-rc.2.2"
         }
       },
       {
@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/vapor/mysql-kit.git",
         "state": {
           "branch": null,
-          "revision": "c4d32e3fde8f30f3150b31885f4656285ada35fb",
-          "version": "4.0.0-rc.1.7"
+          "revision": "822108a6088c60bab8708269c489ebf6c4256959",
+          "version": "4.0.0"
         }
       },
       {
