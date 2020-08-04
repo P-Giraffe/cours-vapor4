@@ -78,8 +78,8 @@
         "repositoryURL": "https://github.com/vapor/mysql-nio.git",
         "state": {
           "branch": null,
-          "revision": "714de3ddc1e947d0aad9bf7ccb8971b6fe576afd",
-          "version": "1.2.0"
+          "revision": "1e85541257ef8166017aabcde4fa8de0c41111b8",
+          "version": "1.3.0"
         }
       },
       {
@@ -159,8 +159,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "3cfb3f1d6efb05d1e93be342ea3d3e99aed00bb5",
-          "version": "2.20.0"
+          "revision": "acf5465b5e7fb9aeda54a34d16fb44c31a399715",
+          "version": "2.20.2"
         }
       },
       {
