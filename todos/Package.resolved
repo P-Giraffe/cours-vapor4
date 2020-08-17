@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/swift-server/async-http-client.git",
         "state": {
           "branch": null,
-          "revision": "037b70291941fe43de668066eb6fb802c5e181d2",
-          "version": "1.1.1"
+          "revision": "c9a9bf061d713c91ee9974fa8a6afe413acfd0e9",
+          "version": "1.2.0"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/vapor/console-kit.git",
         "state": {
           "branch": null,
-          "revision": "310f714b4ac4032946fd2c7984e8082a99f7dd49",
-          "version": "4.2.0"
+          "revision": "7cf8185ad62d50ae9777ce78bcfde8f5c9f900e2",
+          "version": "4.2.1"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-kit.git",
         "state": {
           "branch": null,
-          "revision": "3e4e5383669f7103032bf232d36ad94ba96f0655",
-          "version": "1.4.1"
+          "revision": "2227231901db2c4d73c0a92cc088447f2a41030d",
+          "version": "1.7.1"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-mysql-driver.git",
         "state": {
           "branch": null,
-          "revision": "60ce51c2df93a2fe631265d358c378b283b2a8f4",
-          "version": "4.0.0-rc.2"
+          "revision": "699e164880387349bf04c2329fe53097524a5904",
+          "version": "4.0.0"
         }
       },
       {
@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/vapor/mysql-kit.git",
         "state": {
           "branch": null,
-          "revision": "b59a08d77c3830b21f35fe744813640ef56a2ebb",
-          "version": "4.0.0-rc.1.6"
+          "revision": "822108a6088c60bab8708269c489ebf6c4256959",
+          "version": "4.0.0"
         }
       },
       {
@@ -78,8 +78,8 @@
         "repositoryURL": "https://github.com/vapor/mysql-nio.git",
         "state": {
           "branch": null,
-          "revision": "11b69fe90fb282c4a385b3b7ddb3011033672e48",
-          "version": "1.0.0-rc.2.5"
+          "revision": "1e85541257ef8166017aabcde4fa8de0c41111b8",
+          "version": "1.3.0"
         }
       },
       {
@@ -159,8 +159,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "8a865bd15e69526cbdfcfd7c47698eb20b2ba951",
-          "version": "2.19.0"
+          "revision": "acf5465b5e7fb9aeda54a34d16fb44c31a399715",
+          "version": "2.20.2"
         }
       },
       {
@@ -168,8 +168,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio-extras.git",
         "state": {
           "branch": null,
-          "revision": "7cd24c0efcf9700033f671b6a8eaa64a77dd0b72",
-          "version": "1.5.1"
+          "revision": "d525d3bbd1321fa928948065fd9a8dc109d5d45b",
+          "version": "1.6.0"
         }
       },
       {
@@ -177,8 +177,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio-http2.git",
         "state": {
           "branch": null,
-          "revision": "c76a9a5085bfc22882f8cff88189662af30806e8",
-          "version": "1.12.3"
+          "revision": "e9627350bdb85bde7e0dc69a29799e40961ced72",
+          "version": "1.13.0"
         }
       },
       {
@@ -186,8 +186,17 @@
         "repositoryURL": "https://github.com/apple/swift-nio-ssl.git",
         "state": {
           "branch": null,
-          "revision": "d381bc53edd9de88a75480a2b969bfc26d61ee76",
-          "version": "2.8.0"
+          "revision": "8a137b72a9339f295bc8bb95cd2fafe207f1df0d",
+          "version": "2.9.0"
+        }
+      },
+      {
+        "package": "swift-nio-transport-services",
+        "repositoryURL": "https://github.com/apple/swift-nio-transport-services.git",
+        "state": {
+          "branch": null,
+          "revision": "d40a5e34e5b35f4f961cb34aeb2e0a02f42a945f",
+          "version": "1.8.0"
         }
       },
       {
@@ -195,8 +204,8 @@
         "repositoryURL": "https://github.com/vapor/vapor.git",
         "state": {
           "branch": null,
-          "revision": "af65c6080141f7ff2192460c965ecbe97c296488",
-          "version": "4.26.0"
+          "revision": "a8a641c9c72a42dd7787b23cf668bcb7656c1a41",
+          "version": "4.27.3"
         }
       },
       {
