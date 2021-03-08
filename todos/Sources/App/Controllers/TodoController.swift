@@ -17,6 +17,7 @@ struct TodoController {
     
     func count(req: Request) throws -> EventLoopFuture<Int> {
         return Todo.query(on: req.db).all().map { todoList -> Int in todoList.count }
+        //return Todo.query(on: req.db).count()         <---- sur un véritable serveur de production, utilisez plutôt cette ligne qui est plus performante. La version ci-dessu est interessante pédagogiquement pour montrer l'utilisation du map uniquement.
     }
 
     func create(req: Request) throws -> EventLoopFuture<Todo> {
