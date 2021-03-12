@@ -11,7 +11,7 @@ Voici quelques exemples de chapitres abordés :
 - Acquérir les bases de la manipulation d'un système Unix (macOS, Ubuntu, etc.)
 - Comprendre les principes des webservices
 - Comprendre les notions de protocole HTTP
-- Utiliser Vapor 4 pour créer un webservices
+- Utiliser Vapor 4 pour créer un webservice
 - Exploiter les notions de routes dans Vapor
 - Sécuriser la gestion et le stockage des mots de passes utilisateurs
 - Manipuler des bases de données SQLite et MySQL en Swift
@@ -20,12 +20,12 @@ Voici quelques exemples de chapitres abordés :
 
 Tout ce que vous avez besoin de connaître pour créer de A a Z votre webservice en Swift est dans ce cours.
 
-Si vous utilisez déjà le Swift pour créer des apps iOS, c'est un excellent choix stratégique pour améliorer vos apps.
+Si vous utilisez déjà le Swift pour créer des apps iPhone ou iPad, c'est un excellent choix stratégique pour améliorer vos apps.
+Vous pourrez bien entendu utiliser votre webservice créé en Swift pour fournir des données à des apps utilisant d'autres langages et technologies comme Flutter, Android, iPhone, Mac, Windows, Sites web, etc. 
 
 Lien direct : [Créer un webservice en Swift avec Vapor 4](https://www.purplegiraffe.fr/p/creer-un-webservice-en-swift-avec-vapor-4/?utm_source=mbritto&utm_medium=github&utm_campaign=vapor4)
 
 Ce cours fait partie de mes cours en ligne disponibles sur le site de [Purple Giraffe](https://www.purplegiraffe.fr/?utm_source=mbritto&utm_medium=github&utm_campaign=vapor4).
-
 
 ## Corrections et codes sources
 
