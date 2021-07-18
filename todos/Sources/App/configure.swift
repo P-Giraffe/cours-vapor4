@@ -10,7 +10,11 @@ public func configure(_ app: Application) throws {
 
     if app.environment == .production {
         //Environment.get("MySQL_VAPOR_PASSWORD")
-        app.databases.use(.mysql(hostname: "127.0.0.1", username: "vapor_user", password: "", tlsConfiguration: TLSConfiguration.forClient(certificateVerification: .none)), as: .mysql)
+        
+        var TLSCustomConfiguration = TLSConfiguration.makeClientConfiguration()
+        TLSCustomConfiguration.certificateVerification = .none
+        
+        app.databases.use(.mysql(hostname: "127.0.0.1", username: "vapor_user", password: "", tlsConfiguration: TLSCustomConfiguration), as: .mysql)
     } else {
         app.databases.use(.sqlite(.file("db.sqlite")), as: .sqlite)
     }
